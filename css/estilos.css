@@ -12,7 +12,7 @@ header {
     text-align: center; /* Center-align all text in the header */
 }
 header img {
-    height: 60px; /* Default logo size */
+    height: 160px; /* Default logo size */
     vertical-align: middle; /* Align logo vertically with text */
 }
 section {
