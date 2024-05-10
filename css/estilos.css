@@ -1,0 +1,52 @@
+ /* Basic styles */
+ body {
+    font-family: 'Times New Roman', serif; /* Serif font for a classic look */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-color: #8a2be2; /* Vibrant violet background for a lively look */
+}
+header {
+    background-color: #202020; /* Black color for header */
+    color: white; /* White text color for contrast */
+    padding: 10px 20px; /* Padding for spacing inside the header */
+    text-align: center; /* Center-align all text in the header */
+}
+header img {
+    height: 60px; /* Default logo size */
+    vertical-align: middle; /* Align logo vertically with text */
+}
+section {
+    margin: 20px; /* Margin around sections for spacing */
+    padding: 20px; /* Padding inside sections */
+    background-color: white; /* White background for content areas */
+    border-radius: 8px; /* Rounded corners for sections */
+}
+footer {
+    text-align: center; /* Center-align footer content */
+    padding: 10px 20px; /* Padding inside the footer */
+    background-color: #000000; /* Black footer matching the header */
+    color: white; /* White text for readability */
+}
+a {
+    color: #0077cc; /* Light blue color for links for visibility */
+    text-decoration: none; /* Remove underline from links */
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header img {
+        height: 50px; /* Slightly smaller logo on tablets */
+    }
+    section, footer {
+        margin: 15px; /* Slightly smaller margin on tablets */
+        padding: 15px; /* Slightly smaller padding on tablets */
+    }
+}
+@media (max-width: 600px) {
+    header img {
+        height: 40px; /* Even smaller logo for smartphones */
+    }
+    section, footer {
+        margin: 10px; /* Reduced margin for smartphones */
+        padding: 10px; /* Reduced padding for smartphones */
+    }
+}
