@@ -2,87 +2,92 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <!-- Ensure proper scaling on all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xisledia - Página Oficial</title>
+    <!-- Inline styles for simplicity, but you can move these to an external stylesheet -->
     <style>
+        /* Basic styles */
         body {
-            font-family: 'Times New Roman', Times, serif;
-            margin: 0;
-            padding: 0;
-            background-color: #8a2be2; /* Color violeta como fondo del cuerpo */
+            font-family: 'Times New Roman', serif; /* Serif font for a classic look */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            background-color: #8a2be2; /* Vibrant violet background for a lively look */
         }
         header {
-            background-color: #202020; /* Color negro para el encabezado */
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
+            background-color: #202020; /* Black color for header */
+            color: white; /* White text color for contrast */
+            padding: 10px 20px; /* Padding for spacing inside the header */
+            text-align: center; /* Center-align all text in the header */
         }
         header img {
-            height: 160px; /* Ajusta este valor según el tamaño deseado para tu logo */
-            vertical-align: middle; /* Alinea verticalmente el logo con el texto del encabezado */
+            height: 60px; /* Default logo size */
+            vertical-align: middle; /* Align logo vertically with text */
         }
         section {
-            margin: 20px;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
+            margin: 20px; /* Margin around sections for spacing */
+            padding: 20px; /* Padding inside sections */
+            background-color: white; /* White background for content areas */
+            border-radius: 8px; /* Rounded corners for sections */
         }
         footer {
-            text-align: center;
-            padding: 10px 20px;
-            background-color: #000000; /* Asegurando que el footer también sea negro */
-            color: #fff;
+            text-align: center; /* Center-align footer content */
+            padding: 10px 20px; /* Padding inside the footer */
+            background-color: #000000; /* Black footer matching the header */
+            color: white; /* White text for readability */
         }
         a {
-            color: #0077cc;
+            color: #0077cc; /* Light blue color for links for visibility */
+            text-decoration: none; /* Remove underline from links */
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header img {
+                height: 50px; /* Slightly smaller logo on tablets */
+            }
+            section, footer {
+                margin: 15px; /* Slightly smaller margin on tablets */
+                padding: 15px; /* Slightly smaller padding on tablets */
+            }
+        }
+        @media (max-width: 600px) {
+            header img {
+                height: 40px; /* Even smaller logo for smartphones */
+            }
+            section, footer {
+                margin: 10px; /* Reduced margin for smartphones */
+                padding: 10px; /* Reduced padding for smartphones */
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="Logo_D66.png" alt="Logo de Xisledia"> <!-- Añade el logo aquí -->
-        <h1>      </h1>
-        <p>Bienvenidos a la página oficial de Xisledia</p>
+        <img src="NOMBRE.png" alt="Logo de Xisledia"> <!-- Logo with alt text for accessibility -->
+        <h1>Xisledia</h1> <!-- Main header title -->
+        <p>Bienvenidos a la página oficial de Xisledia</p> <!-- Welcome message -->
     </header>
 
-    <section id="miembros">
-        <h2>Miembros</h2>
-        <p>
-            Nuestra banda está conformada por las siguientes personas:
-            <br>Julieta - Vocalista
-            <br>Sebastián - Guitarrista/Escritor
-            <br>Angélica - Guitarrista/Vocalista
-            <br>Rocío - Baterista
-            <br>Facundo - Guitarrista/Vocalista/Escritor
-        </p>
-    </section>
-
+    <!-- Content sections below -->
     <section id="biografia">
         <h2>Biografía</h2>
-        <p>Xisledia es una banda emergente en la escena musical, conocida por su enérgica fusión de géneros y letras profundas. Desde su formación en 2023, han capturado la atención de ("PROGRAMAR CONTADOR DE SPOTIFY LISTENERS").</p>
+        <p>Xisledia es una banda emergente en la escena musical, conocida por su enérgica fusión de géneros y letras profundas. Desde su formación en 2023, han capturado la atención de fans en todo el mundo.</p>
     </section>
 
     <section id="musica">
         <h2>Música</h2>
         <p>Descubre nuestras últimas canciones aquí. Escucha nuestra música y conviértete en parte de nuestra historia.</p>
-        <ul>
-            <li><a href="#">UNDEFINED</a></li>
-            <li><a href="#">UNDEFINED</a></li>
-            <li><a href="#">UNDEFINED</a></li>
-        </ul>
     </section>
 
     <section id="contacto">
         <h2>Contacto</h2>
-        <p>¿Quieres contactar con nosotros? Envíanos un mensaje a <a href="mailto:sebastian.alamos22@gmail.com">Mail del Escritor</a>.</p>
+        <p>¿Quieres contactar con nosotros? Envíanos un mensaje a <a href="mailto:example@example.com">example@example.com</a>.</p>
     </section>
 
+    <!-- Footer with copyright and social media links -->
     <footer>
         <p>© 2024 Xisledia. Todos los derechos reservados.</p>
-        <p>Síguenos en nuestras redes sociales:
-            <br> href="https://www.instagram.com/xisledia/">Instagram</a>
-            <br>("TIKTOK")
-        </p>
+        <p>Síguenos en nuestras redes sociales: <a href="https://www.instagram.com/xisledia/">Instagram</a></p>
     </footer>
 </body>
 </html>
