@@ -3,37 +3,30 @@
 include('config.php');
 
 // Verificar si se envió el formulario
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Validar la dirección de correo electrónico
-    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        die('Error: Dirección de correo electrónico no válida');
-    }
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $sql = "INSERT INTO `Subscripciones` (email) VALUES (?)";
 
-    // Limpiar y escapar la dirección de correo electrónico para evitar inyección SQL
-    $email = $conexion->real_escape_string($_POST['email']);
+        // Prepare statement
+        $stmt = $conn->prepare($sql);
+        if ($stmt === false) {
+            die('MySQL prepare error: ' . $conn->error);
+        }
 
-    // Consulta para verificar si el correo ya está suscrito
-    $consulta = "SELECT id FROM subscribers WHERE email = '$email'";
-    $resultado = $conexion->query($consulta);
-
-    if ($resultado->num_rows > 0) {
-        die('Error: Esta dirección de correo electrónico ya está suscrita');
-    }
-
-    // Insertar la dirección de correo electrónico en la base de datos
-    $sql = "INSERT INTO subscribers (email) VALUES ('$email')";
-
-    if ($conexion->query($sql) === TRUE) {
-        echo "¡Te has suscrito correctamente!";
+        // Bind parameters and execute
+        $stmt->bind_param("s", $email);
+        if ($stmt->execute()) {
+            echo "Subscription successful!";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+        $stmt->close();
     } else {
-        echo "Error al suscribirse: " . $conexion->error;
+        echo "Invalid email format";
     }
-} else {
-    // Redireccionar si se intenta acceder directamente a este archivo
-    header('Location: index.php');
-    exit;
 }
 
-// Cerrar la conexión
-$conexion->close();
+$conn->close();
 ?>
