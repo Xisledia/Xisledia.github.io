@@ -1,52 +1,69 @@
- /* Basic styles */
- body {
-    font-family: 'Times New Roman', serif; /* Serif font for a classic look */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    background-color: #848db8; 
+/* Basic Styles */
+body {
+    font-family: 'Times New Roman', serif; /* Maintaining classic serif font */
+    margin: 0; /* Remove default margin to use entire viewport */
+    padding: 0; /* Remove default padding for a cleaner look */
+    background-color: #848db8; /* Soft muted blue for a calming background */
 }
+
 header {
-    background-color: #202020; /* Black color for header */
-    color: white; /* ite text color for contrast */
-    padding: 10px 20px; /* Padding for spacing inside the header */
-    text-align: center; /* Center-align all text in the header */
+    background-color: #202020; /* Consistent dark theme for header */
+    color: white; /* High contrast for text readability */
+    padding: 20px; /* Adequate padding for spacing */
+    text-align: center; /* Center text for better focus on brand/logo */
 }
+
 header img {
-    height: 160px; /* Default logo size */
-    vertical-align: middle; /* Align logo vertically with text */
+    height: 160px; /* Initial logo size optimized for desktops */
+    vertical-align: middle; /* Ensures logo aligns with any inline elements */
 }
+
 section {
-    margin: 20px; /* Margin around sections for spacing */
-    padding: 20px; /* Padding inside sections */
-    background-color: white; /* White background for content areas */
-    border-radius: 8px; /* Rounded corners for sections */
+    margin: 20px; /* Uniform margin for clean separation between content */
+    padding: 20px; /* Uniform padding for content isolation */
+    background-color: white; /* Contrasting background for main content */
+    border-radius: 8px; /* Soft rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
 }
+
 footer {
-    text-align: center; /* Center-align footer content */
-    padding: 10px 20px; /* Padding inside the footer */
-    background-color: #202020; /* Black footer matching the header */
-    color: white; /* White text for readability */
+    text-align: center; /* Central alignment for consistency with header */
+    padding: 20px; /* Adequate padding for footer content */
+    background-color: #202020; /* Matching header for a cohesive look */
+    color: white; /* Ensures visibility of footer text */
 }
+
 a {
-    color: #0077cc; /* Light blue color for links for visibility */
-    text-decoration: none; /* Remove underline from links */
+    color: #0077cc; /* Pleasant blue for links */
+    text-decoration: none; /* Clean look without underlines */
+    transition: color 0.3s; /* Smooth transition for hover effects */
 }
-/* Responsive adjustments */
+
+a:hover, a:focus {
+    color: #005fa3; /* Darker shade of blue for link interaction */
+    text-decoration: underline; /* Underline on hover/focus for emphasis */
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     header img {
-        height: 50px; /* Slightly smaller logo on tablets */
+        height: 100px; /* Moderate reduction for tablet screens */
     }
     section, footer {
-        margin: 15px; /* Slightly smaller margin on tablets */
-        padding: 15px; /* Slightly smaller padding on tablets */
+        margin: 15px; /* Adjusted margin for medium screens */
+        padding: 15px; /* Adjusted padding for medium screens */
     }
 }
+
 @media (max-width: 600px) {
     header img {
-        height: 40px; /* Even smaller logo for smartphones */
+        height: 80px; /* Further reduced for small screens */
     }
     section, footer {
-        margin: 10px; /* Reduced margin for smartphones */
-        padding: 10px; /* Reduced padding for smartphones */
+        margin: 10px; /* Compact margins for smaller devices */
+        padding: 10px; /* Compact padding for a more mobile-friendly layout */
+    }
+    body {
+        font-size: 14px; /* Slightly smaller font size for readability on small devices */
     }
 }
