@@ -3,7 +3,7 @@
     font-family: 'Times New Roman', serif; /* Serif font for a classic look */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
-    background-color: #8a2be2; /* Vibrant violet background for a lively look */
+    background-color: #848db8; 
 }
 header {
     background-color: #202020; /* Black color for header */
@@ -24,7 +24,7 @@ section {
 footer {
     text-align: center; /* Center-align footer content */
     padding: 10px 20px; /* Padding inside the footer */
-    background-color: #000000; /* Black footer matching the header */
+    background-color: #202020; /* Black footer matching the header */
     color: white; /* White text for readability */
 }
 a {
