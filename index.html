@@ -6,91 +6,29 @@
     <title>Xisledia - Página Oficial</title>
     <link rel="stylesheet" href="/css/estilos.css">
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-    <style>
-        /* Estilos adicionales para el formulario de inicio de sesión */
-        .admin-login {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .admin-login h2 {
-            margin-top: 0;
-        }
-
-        .admin-login input[type="text"],
-        .admin-login input[type="password"],
-        .admin-login button {
-            display: block;
-            margin-bottom: 10px;
-            width: 100%;
-            padding: 5px;
-            border-radius: 3px;
-            border: 1px solid #ccc;
-        }
-
-        .admin-login button {
-            background-color: #0077cc;
-            color: #fff;
-            border: none;
-        }
-
-        .admin-login button:hover {
-            background-color: #005fa3;
-        }
-    </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">
-                <img src="/img/Logo_D66.png" alt="Logo de Xisledia" height="160">
-                <h1>Xisledia</h1>
-                <p>Bienvenidos a la página oficial de Xisledia</p>
-            </div>
-            <div class="admin-login">
-                <h2>Login Administrador</h2>
-                <form action="/login.php" method="POST">
-                    <input type="text" name="usuario" placeholder="Usuario" required>
-                    <input type="password" name="contrasena" placeholder="Contraseña" required>
-                    <button type="submit">Iniciar Sesión</button>
-                </form>
-            </div>
+            <img src="/img/Logo_D66.png" alt="Logo de Xisledia" height="160">
+            <h1>Xisledia</h1>
+            <p>Bienvenidos a la página oficial de Xisledia</p>
+            <ul>
+                <li><a href="/Secciones/Biografia.html">Biografía</a></li>
+                <li><a href="/Secciones/Musica.html">Música</a></li>
+                <li><a href="/Secciones/Contacto.html">Contacto</a></li>
+                <li><a href="/eventos">Eventos</a></li>
+                <li><a href="/galeria">Galería</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        <section id="biografia">
-            <h2>Biografía</h2>
-            <p>Xisledia es una banda emergente en la escena musical, conocida por su enérgica fusión de géneros y letras profundas. Desde su formación en 2023, han capturado la atención de fans en todo el mundo.</p>
-        </section>
-
-        <section id="musica">
-            <h2>Música</h2>
-            <p>Descubre nuestras últimas canciones aquí. Escucha nuestra música y conviértete en parte de nuestra historia.</p>
-        </section>
-
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>¿Quieres contactar con nosotros? Envíanos un mensaje a <a href="mailto:sebastian.alamos22@gmail.com">Escritor</a>.</p>
-            <form action="/php/subscribirse.php" method="POST">
-                <label for="email">Suscríbete a nuestro boletín:</label>
-                <input type="email" id="email" name="email" required>
-                <button type="submit">Suscribirse</button>
-            </form>
-        </section>
-
-        <section id="eventos">
-            <h2>Próximos UNDEFINED</h2>
-            <ul>
-                <li>UNLINKED</li>
-                <li>UNLINKED</li>
-                <li>UNLINKED</li>
-            </ul>
+        <!-- Content here might be static or dynamically included depending on server setup -->
+        <section>
+            <h2>Contenido Principal</h2>
+            <p>Esta sección principal se actualizará con información relevante de acuerdo a la página accedida mediante el menú de navegación.</p>
         </section>
     </main>
 
