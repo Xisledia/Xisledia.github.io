@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #8A2BE2; /* Color violeta para el fondo */
+            background-color: #ffffff; /* Fondo blanco */
         }
         header {
             background-color: #8A2BE2; /* Color violeta para el header */
@@ -25,6 +25,7 @@
             height: 100vh;
             background-color: #4B0082; /* Color del menú */
             transition: left 0.3s ease; /* Efecto de transición al mostrar/ocultar */
+            overflow-y: auto; /* Agregar scroll si el contenido excede la altura */
         }
         nav a {
             display: block;
@@ -36,7 +37,7 @@
             background-color: #6A5ACD; /* Color de fondo al pasar el mouse por encima */
         }
         main {
-            margin-left: 20px; /* Margen izquierdo para dejar espacio al menú */
+            margin-left: 220px; /* Margen izquierdo para dejar espacio al menú */
             padding: 20px;
         }
         footer {
@@ -55,6 +56,10 @@
             color: #fff;
             font-size: 20px;
         }
+        .admin-login {
+            text-align: center;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -65,11 +70,12 @@
     </header>
 
     <nav id="sidebar">
-        <a href="#header">Ir al Header</a>
+        <a href="#header">Header</a>
         <a href="#biografia">Biografía</a>
         <a href="#musica">Música</a>
         <a href="#contacto">Contacto</a>
-        <a href="#footer">Ir al Footer</a>
+        <a href="#boletin">Suscríbete al Boletín</a>
+        <a href="#" class="admin-login">Admin Login</a>
     </nav>
 
     <main>
@@ -86,15 +92,19 @@
         <section id="contacto">
             <h2>Contacto</h2>
             <p>¿Quieres contactar con nosotros? Envíanos un mensaje a <a href="mailto:sebastian.alamos22@gmail.com">Escritor</a>.</p>
+        </section>
+
+        <section id="boletin">
+            <h2>Suscríbete al Boletín</h2>
             <form action="/suscribirse.php" method="POST">
-                <label for="email">Suscríbete a nuestro boletín:</label>
+                <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
                 <button type="submit">Suscribirse</button>
             </form>
         </section>
     </main>
 
-    <footer id="footer">
+    <footer>
         <p>© 2024 Xisledia. Todos los derechos reservados.</p>
         <p>Síguenos en nuestras redes sociales: <a href="https://www.instagram.com/xisledia/">Instagram</a> | <a href="https://www.tiktok.com/@xisledia">TikTok</a></p>
     </footer>
