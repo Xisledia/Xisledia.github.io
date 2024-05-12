@@ -18,17 +18,17 @@
             text-align: center;
         }
         nav {
-            float: left; /* Colocar el menú a la izquierda */
-            width: 200px; /* Ancho del menú */
+            position: fixed;
+            top: 0;
+            left: -220px; /* Ocultar el menú desplazándolo a la izquierda */
+            width: 200px;
+            height: 100vh;
             background-color: #4B0082; /* Color del menú */
-            height: 100vh; /* Altura del menú igual al alto de la pantalla */
-            position: fixed; /* Fijar el menú en su posición */
-            top: 0; /* Colocar el menú en la parte superior */
-            overflow-y: auto; /* Permitir scroll vertical si es necesario */
+            transition: left 0.3s ease; /* Efecto de transición al mostrar/ocultar */
         }
         nav a {
-            display: block; /* Convertir enlaces en bloques para ocupar toda la anchura del menú */
-            padding: 10px 20px; /* Espaciado de los enlaces */
+            display: block;
+            padding: 10px 20px;
             color: #fff;
             text-decoration: none;
         }
@@ -36,7 +36,7 @@
             background-color: #6A5ACD; /* Color de fondo al pasar el mouse por encima */
         }
         main {
-            margin-left: 220px; /* Margen izquierdo para dejar espacio al menú */
+            margin-left: 20px; /* Margen izquierdo para dejar espacio al menú */
             padding: 20px;
         }
         footer {
@@ -46,21 +46,31 @@
             text-align: center;
             clear: both; /* Limpiar float para evitar superposiciones */
         }
+        .menu-btn {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 999;
+            cursor: pointer;
+            color: #fff;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
-    <nav>
+    <header>
+        <span class="menu-btn" onclick="toggleMenu()">MENU</span>
+        <h1>Xisledia</h1>
+        <p>Bienvenidos a la página oficial de Xisledia</p>
+    </header>
+
+    <nav id="sidebar">
         <a href="#header">Ir al Header</a>
         <a href="#biografia">Biografía</a>
         <a href="#musica">Música</a>
         <a href="#contacto">Contacto</a>
         <a href="#footer">Ir al Footer</a>
     </nav>
-
-    <header id="header">
-        <h1>Xisledia</h1>
-        <p>Bienvenidos a la página oficial de Xisledia</p>
-    </header>
 
     <main>
         <section id="biografia">
@@ -88,5 +98,16 @@
         <p>© 2024 Xisledia. Todos los derechos reservados.</p>
         <p>Síguenos en nuestras redes sociales: <a href="https://www.instagram.com/xisledia/">Instagram</a> | <a href="https://www.tiktok.com/@xisledia">TikTok</a></p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            var sidebar = document.getElementById('sidebar');
+            if (sidebar.style.left === '-220px') {
+                sidebar.style.left = '0';
+            } else {
+                sidebar.style.left = '-220px';
+            }
+        }
+    </script>
 </body>
 </html>
