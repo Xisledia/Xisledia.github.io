@@ -3,54 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos - Xisledia</title>
+    <title>Xisledia - Página Oficial</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #8A2BE2; /* Color violeta para el fondo */
         }
         header {
-            background-color: #FFA07A; /* Color para Eventos */
+            background-color: #8A2BE2; /* Color violeta para el header */
             color: #fff;
             padding: 10px 20px;
             text-align: center;
         }
-        nav a {
-            font-size: 20px; /* Tamaño de letra más grande para los enlaces */
-            color: #FFD700; /* Color dorado para los enlaces */
-            text-decoration: none; /* Quitar subrayado */
-            margin: 0 10px; /* Espaciado entre enlaces */
+        nav {
+            float: left; /* Colocar el menú a la izquierda */
+            width: 200px; /* Ancho del menú */
+            background-color: #4B0082; /* Color del menú */
+            height: 100vh; /* Altura del menú igual al alto de la pantalla */
+            position: fixed; /* Fijar el menú en su posición */
+            top: 0; /* Colocar el menú en la parte superior */
+            overflow-y: auto; /* Permitir scroll vertical si es necesario */
         }
-        section {
-            background-color: #fff;
+        nav a {
+            display: block; /* Convertir enlaces en bloques para ocupar toda la anchura del menú */
+            padding: 10px 20px; /* Espaciado de los enlaces */
+            color: #fff;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #6A5ACD; /* Color de fondo al pasar el mouse por encima */
+        }
+        main {
+            margin-left: 220px; /* Margen izquierdo para dejar espacio al menú */
             padding: 20px;
-            border-radius: 8px;
-            margin: 20px;
+        }
+        footer {
+            background-color: #8A2BE2; /* Color violeta para el footer */
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            clear: both; /* Limpiar float para evitar superposiciones */
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="biografia.html">Biografía</a>
-            <a href="musica.html">Música</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="eventos.html">Eventos</a>
-        </nav>
+    <nav>
+        <a href="#header">Ir al Header</a>
+        <a href="#biografia">Biografía</a>
+        <a href="#musica">Música</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#footer">Ir al Footer</a>
+    </nav>
+
+    <header id="header">
         <h1>Xisledia</h1>
-        <p>Eventos</p>
+        <p>Bienvenidos a la página oficial de Xisledia</p>
     </header>
 
     <main>
-        <section id="eventos">
-            <h2>Próximos Eventos de Xisledia</h2>
-            <p>Aquí podrás encontrar información sobre nuestros próximos eventos y conciertos.</p>
+        <section id="biografia">
+            <h2>Biografía</h2>
+            <p>Xisledia es una banda emergente en la escena musical, conocida por su enérgica fusión de géneros y letras profundas. Desde su formación en 2023, han capturado la atención de fans en todo el mundo.</p>
+        </section>
+
+        <section id="musica">
+            <h2>Música</h2>
+            <p>Descubre nuestras últimas canciones aquí. Escucha nuestra música y conviértete en parte de nuestra historia.</p>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>¿Quieres contactar con nosotros? Envíanos un mensaje a <a href="mailto:sebastian.alamos22@gmail.com">Escritor</a>.</p>
+            <form action="/suscribirse.php" method="POST">
+                <label for="email">Suscríbete a nuestro boletín:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Suscribirse</button>
+            </form>
         </section>
     </main>
 
-    <footer>
-        <!-- Footer content -->
+    <footer id="footer">
+        <p>© 2024 Xisledia. Todos los derechos reservados.</p>
+        <p>Síguenos en nuestras redes sociales: <a href="https://www.instagram.com/xisledia/">Instagram</a> | <a href="https://www.tiktok.com/@xisledia">TikTok</a></p>
     </footer>
 </body>
 </html>
