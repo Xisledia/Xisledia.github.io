@@ -4,109 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xisledia - Página Oficial</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffffff; /* Fondo blanco */
+            background-color: #ffffff;
         }
         header {
-            background-color: #8A2BE2; /* Color violeta para el header */
+            background-color: #8A2BE2; /* Violet header color */
             color: #fff;
             padding: 10px 20px;
             text-align: center;
         }
         nav {
-            position: fixed;
-            top: 0;
-            left: -220px; /* Ocultar el menú desplazándolo a la izquierda */
-            width: 200px;
-            height: 100vh;
-            background-color: #4B0082; /* Color del menú */
-            transition: left 0.3s ease; /* Efecto de transición al mostrar/ocultar */
-            overflow-y: auto; /* Agregar scroll si el contenido excede la altura */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         nav a {
-            display: block;
-            padding: 10px 20px;
-            color: #fff;
+            font-size: 20px;
+            color: #FFD700; /* Gold color for hyperlinks */
             text-decoration: none;
+            margin: 0 10px;
         }
-        nav a:hover {
-            background-color: #6A5ACD; /* Color de fondo al pasar el mouse por encima */
+        .error-message {
+            background-color: #ff0000; /* Red background for error */
+            color: #ffffff; /* White text color */
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            display: none;
         }
         main {
-            margin-left: 220px; /* Margen izquierdo para dejar espacio al menú */
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #f4f4f4;
             padding: 20px;
-        }
-        footer {
-            background-color: #8A2BE2; /* Color violeta para el footer */
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-            clear: both; /* Limpiar float para evitar superposiciones */
-        }
-        .menu-btn {
             position: fixed;
-            top: 10px;
-            left: 10px;
-            z-index: 999;
-            cursor: pointer;
+            top: 0;
+            left: 0;
+            height: 100%;
+            overflow: auto;
+            transition: transform 0.3s ease;
+            transform: translateX(-100%);
+        }
+        .sidebar.active {
+            transform: translateX(0);
+        }
+        .sidebar button {
+            background-color: #8A2BE2;
             color: #fff;
-            font-size: 20px;
-        }
-        .admin-login {
-            text-align: center;
-            margin-top: 10px;
-        }
-        .admin-login form {
-            margin: 20px auto;
-            max-width: 300px;
-            padding: 20px;
-            background-color: #f0f0f0;
-            border-radius: 8px;
-        }
-        .admin-login input {
-            display: block;
-            margin: 10px 0;
-            padding: 10px;
-            width: 100%;
-        }
-        .admin-login button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
             border: none;
-            border-radius: 4px;
+            padding: 10px;
             cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            color: #000;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+            flex-grow: 1;
         }
     </style>
 </head>
 <body>
     <header>
-        <span class="menu-btn" onclick="toggleMenu()">MENU</span>
-        <h1>Xisledia</h1>
-        <p>Bienvenidos a la página oficial de Xisledia</p>
+        <div class="error-message" id="errorMessage">ERROR: Unauthorized access detected. System lockdown initiated.</div>
+        <nav>
+            <img src="/img/Logo_D66.png" alt="Logo de Xisledia" height="160">
+            <h1>Xisledia</h1>
+            <p>Bienvenidos a la página oficial de Xisledia</p>
+            <button onclick="toggleMenu()">MENU</button>
+        </nav>
     </header>
 
-    <nav id="sidebar">
-        <a href="/Secciones/Biografia.html">Biografía</a>
-        <a href="/Secciones/Musica.html">Música</a>
-        <a href="/Secciones/Contacto.html">Contacto</a>
-        <a href="/Secciones/Galeria.html">Nuestra Galeria</a>
-        <a href="/Secciones/Eventos.html">Nuestras Pelotudeces</a>
-        <a href="admin-login.html" class="admin-login">Admin Login</a>
-    </nav>
+    <div class="sidebar" id="sidebar">
+        <button onclick="toggleMenu()">Close</button>
+        <a href="Secciones/Biografia.html">Biografía</a>
+        <a href="Secciones/Musica.html">Música</a>
+        <a href="Secciones/Contacto.html">Contacto</a>
+        <a href="Secciones/Eventos.html">Eventos</a>
+        <a href="Secciones/Galeria.html">Galería</a>
+        <a href="Secciones/Blog.html">Blog</a>
+        <form action="admin-authenticate.php" method="POST">
+            <label for="username">Admin Username</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Admin Password</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
 
     <main>
-        <section id="Sobre Nosotros">
-            <h2>______________</h2>
-            <p>Somos un grupo reciente de Rock. No hay mucho mas que decir. </p>
-        </section>
-
-        <!-- Otras secciones -->
-
+        <div class="content">
+            <!-- Main content goes here -->
+        </div>
     </main>
 
     <footer>
@@ -117,12 +124,20 @@
     <script>
         function toggleMenu() {
             var sidebar = document.getElementById('sidebar');
-            if (sidebar.style.left === '-220px') {
-                sidebar.style.left = '0';
-            } else {
-                sidebar.style.left = '-220px';
+            sidebar.classList.toggle('active');
+        }
+
+        function checkTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            if (hours >= 20 || hours < 5) {
+                document.getElementById('errorMessage').style.display = 'block';
             }
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            checkTime();
+        });
     </script>
 </body>
 </html>
