@@ -14,11 +14,17 @@
             font-size: 24px;
             margin: 20px 0;
         }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <h1>Tres Elementos Aleatorios de la Tabla Periódica</h1>
     <div id="elements"></div>
+    <button onclick="displayElements()">Generar Elementos</button>
 
     <script>
         const elements = [
@@ -119,7 +125,7 @@
             { symbol: 'Am', name: 'Americio', number: 95 },
             { symbol: 'Cm', name: 'Curio', number: 96 },
             { symbol: 'Bk', name: 'Berkelio', number: 97 },
-            { symbol: 'Cf', name: 'Californio', number: 98 },
+            { symbol: 'Cf', name:'Californio', number: 98 },
             { symbol: 'Es', name: 'Einstenio', number: 99 },
             { symbol: 'Fm', name: 'Fermio', number: 100 },
             { symbol: 'Md', name: 'Mendelevio', number: 101 },
@@ -140,22 +146,17 @@
             { symbol: 'Lv', name: 'Livermorio', number: 116 },
             { symbol: 'Ts', name: 'Tenesino', number: 117 },
             { symbol: 'Og', name: 'Oganesón', number: 118 }
-        ];
+            ];
+function getRandomElements(array, count) {
+        const shuffled = array.sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, count);
+    }
 
-        function getRandomElements(array, count) {
-            const shuffled = array.sort(() => 0.5 - Math.random());
-            return shuffled.slice(0, count);
-        }
-
-        function displayElements() {
-            const randomElements = getRandomElements(elements, 3);
-            const container = document.getElementById('elements');
-            container.innerHTML = randomElements.map(element => 
-                `<div class="element">${element.symbol} (${element.name}) - Número Atómico: ${element.number}</div>`
-            ).join('');
-        }
-
-        displayElements();
-    </script>
-</body>
-</html>
+    function displayElements() {
+        const randomElements = getRandomElements(elements, 3);
+        const container = document.getElementById('elements');
+        container.innerHTML = randomElements.map(element => 
+            `<div class="element">${element.symbol} (${element.name}) - Número Atómico: ${element.number}</div>`
+        ).join('');
+    }
+</script>
