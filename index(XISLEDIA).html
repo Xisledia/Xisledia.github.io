@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xisledia - Página Oficial</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        header {
+            background-color: #8A2BE2; /* Violet header color */
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        nav a {
+            font-size: 20px;
+            color: #FFD700; /* Gold color for hyperlinks */
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .error-message {
+            background-color: #ff0000; /* Red background for error */
+            color: #ffffff; /* White text color */
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            display: none;
+        }
+        main {
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            overflow: auto;
+            transition: transform 0.3s ease;
+            transform: translateX(-100%);
+        }
+        .sidebar.active {
+            transform: translateX(0);
+        }
+        .sidebar button {
+            background-color: #8A2BE2;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            color: #000;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="error-message" id="errorMessage">ERROR: Unauthorized access detected. Esta pagina web No esta disponible en este horario, Vuelve a intentarlo a las 05:00 AM..</div>
+        <nav>
+            <img src="/img/Logo_D66.png" alt="Logo de Xisledia" height="160">
+            <h1>Xisledia</h1>
+            <p>Bienvenidos a la página oficial de Xisledia</p>
+            <button onclick="toggleMenu()">MENU</button>
+        </nav>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <button onclick="toggleMenu()">Close</button>
+        <a href="Secciones/Biografia.html">Biografía</a>
+        <a href="Secciones/Musica.html">Música</a>
+        <a href="Secciones/Contacto.html">Contacto</a>
+        <a href="Secciones/Eventos.html">Eventos</a>
+        <a href="Secciones/Galeria.html">Galería</a>
+        <a href="Secciones/Blog.html">Blog</a>
+        <form action="admin-authenticate.php" method="POST">
+            <label for="username">Admin Username</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Admin Password</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <main>
+        <div class="content">
+            <!-- Main content goes here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Xisledia. Todos los derechos reservados.</p>
+        <p>Síguenos en nuestras redes sociales: <a href="https://www.instagram.com/xisledia/">Instagram</a> | <a href="https://www.tiktok.com/@xisledia">TikTok</a></p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        function checkTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            if (hours >= 20 || hours < 5) {
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            checkTime();
+        });
+    </script>
+</body>
+</html>

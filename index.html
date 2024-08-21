@@ -3,141 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xisledia - Página Oficial</title>
-    <link rel="stylesheet" href="/css/estilos.css">
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <title>Elementos Aleatorios de la Tabla Periódica</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-        }
-        header {
-            background-color: #8A2BE2; /* Violet header color */
-            color: #fff;
-            padding: 10px 20px;
             text-align: center;
+            margin-top: 50px;
         }
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        nav a {
-            font-size: 20px;
-            color: #FFD700; /* Gold color for hyperlinks */
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        .error-message {
-            background-color: #ff0000; /* Red background for error */
-            color: #ffffff; /* White text color */
-            padding: 10px;
-            text-align: center;
-            font-size: 18px;
-            display: none;
-        }
-        main {
-            display: flex;
-        }
-        .sidebar {
-            width: 200px;
-            background-color: #f4f4f4;
-            padding: 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            overflow: auto;
-            transition: transform 0.3s ease;
-            transform: translateX(-100%);
-        }
-        .sidebar.active {
-            transform: translateX(0);
-        }
-        .sidebar button {
-            background-color: #8A2BE2;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            width: 100%;
-            text-align: left;
-        }
-        .sidebar a {
-            display: block;
-            padding: 10px;
-            color: #000;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        .sidebar a:hover {
-            background-color: #ddd;
-        }
-        .content {
-            margin-left: 220px;
-            padding: 20px;
-            flex-grow: 1;
+        .element {
+            font-size: 24px;
+            margin: 20px 0;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="error-message" id="errorMessage">ERROR: Unauthorized access detected. Esta pagina web No esta disponible en este horario, Vuelve a intentarlo a las 05:00 AM..</div>
-        <nav>
-            <img src="/img/Logo_D66.png" alt="Logo de Xisledia" height="160">
-            <h1>Xisledia</h1>
-            <p>Bienvenidos a la página oficial de Xisledia</p>
-            <button onclick="toggleMenu()">MENU</button>
-        </nav>
-    </header>
-
-    <div class="sidebar" id="sidebar">
-        <button onclick="toggleMenu()">Close</button>
-        <a href="Secciones/Biografia.html">Biografía</a>
-        <a href="Secciones/Musica.html">Música</a>
-        <a href="Secciones/Contacto.html">Contacto</a>
-        <a href="Secciones/Eventos.html">Eventos</a>
-        <a href="Secciones/Galeria.html">Galería</a>
-        <a href="Secciones/Blog.html">Blog</a>
-        <form action="admin-authenticate.php" method="POST">
-            <label for="username">Admin Username</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Admin Password</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
-        </form>
-    </div>
-
-    <main>
-        <div class="content">
-            <!-- Main content goes here -->
-        </div>
-    </main>
-
-    <footer>
-        <p>© 2024 Xisledia. Todos los derechos reservados.</p>
-        <p>Síguenos en nuestras redes sociales: <a href="https://www.instagram.com/xisledia/">Instagram</a> | <a href="https://www.tiktok.com/@xisledia">TikTok</a></p>
-    </footer>
+    <h1>Tres Elementos Aleatorios de la Tabla Periódica</h1>
+    <div id="elements"></div>
 
     <script>
-        function toggleMenu() {
-            var sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('active');
+        const elements = [
+            { symbol: 'H', name: 'Hidrógeno', number: 1 },
+            { symbol: 'He', name: 'Helio', number: 2 },
+            { symbol: 'Li', name: 'Litio', number: 3 },
+            { symbol: 'Be', name: 'Berilio', number: 4 },
+            { symbol: 'B', name: 'Boro', number: 5 },
+            { symbol: 'C', name: 'Carbono', number: 6 },
+            { symbol: 'N', name: 'Nitrógeno', number: 7 },
+            { symbol: 'O', name: 'Oxígeno', number: 8 },
+            { symbol: 'F', name: 'Flúor', number: 9 },
+            { symbol: 'Ne', name: 'Neón', number: 10 },
+            { symbol: 'Na', name: 'Sodio', number: 11 },
+            { symbol: 'Mg', name: 'Magnesio', number: 12 },
+            { symbol: 'Al', name: 'Aluminio', number: 13 },
+            { symbol: 'Si', name: 'Silicio', number: 14 },
+            { symbol: 'P', name: 'Fósforo', number: 15 },
+            { symbol: 'S', name: 'Azufre', number: 16 },
+            { symbol: 'Cl', name: 'Cloro', number: 17 },
+            { symbol: 'Ar', name: 'Argón', number: 18 },
+            { symbol: 'K', name: 'Potasio', number: 19 },
+            { symbol: 'Ca', name: 'Calcio', number: 20 },
+            { symbol: 'Sc', name: 'Escandio', number: 21 },
+            { symbol: 'Ti', name: 'Titanio', number: 22 },
+            { symbol: 'V', name: 'Vanadio', number: 23 },
+            { symbol: 'Cr', name: 'Cromo', number: 24 },
+            { symbol: 'Mn', name: 'Manganeso', number: 25 },
+            { symbol: 'Fe', name: 'Hierro', number: 26 },
+            { symbol: 'Co', name: 'Cobalto', number: 27 },
+            { symbol: 'Ni', name: 'Níquel', number: 28 },
+            { symbol: 'Cu', name: 'Cobre', number: 29 },
+            { symbol: 'Zn', name: 'Zinc', number: 30 },
+            { symbol: 'Ga', name: 'Galio', number: 31 },
+            { symbol: 'Ge', name: 'Germanio', number: 32 },
+            { symbol: 'As', name: 'Arsénico', number: 33 },
+            { symbol: 'Se', name: 'Selenio', number: 34 },
+            { symbol: 'Br', name: 'Bromo', number: 35 },
+            { symbol: 'Kr', name: 'Kriptón', number: 36 },
+            { symbol: 'Rb', name: 'Rubidio', number: 37 },
+            { symbol: 'Sr', name: 'Estroncio', number: 38 },
+            { symbol: 'Y', name: 'Itrio', number: 39 },
+            { symbol: 'Zr', name: 'Circonio', number: 40 },
+            { symbol: 'Nb', name: 'Niobio', number: 41 },
+            { symbol: 'Mo', name: 'Molibdeno', number: 42 },
+            { symbol: 'Tc', name: 'Tecnecio', number: 43 },
+            { symbol: 'Ru', name: 'Rutenio', number: 44 },
+            { symbol: 'Rh', name: 'Rodio', number: 45 },
+            { symbol: 'Pd', name: 'Paladio', number: 46 },
+            { symbol: 'Ag', name: 'Plata', number: 47 },
+            { symbol: 'Cd', name: 'Cadmio', number: 48 },
+            { symbol: 'In', name: 'Indio', number: 49 },
+            { symbol: 'Sn', name: 'Estaño', number: 50 },
+            { symbol: 'Sb', name: 'Antimonio', number: 51 },
+            { symbol: 'Te', name: 'Telurio', number: 52 },
+            { symbol: 'I', name: 'Yodo', number: 53 },
+            { symbol: 'Xe', name: 'Xenón', number: 54 },
+            { symbol: 'Cs', name: 'Cesio', number: 55 },
+            { symbol: 'Ba', name: 'Bario', number: 56 },
+            { symbol: 'La', name: 'Lantano', number: 57 },
+            { symbol: 'Ce', name: 'Cerio', number: 58 },
+            { symbol: 'Pr', name: 'Praseodimio', number: 59 },
+            { symbol: 'Nd', name: 'Neodimio', number: 60 },
+            { symbol: 'Pm', name: 'Prometio', number: 61 },
+            { symbol: 'Sm', name: 'Samario', number: 62 },
+            { symbol: 'Eu', name: 'Europio', number: 63 },
+            { symbol: 'Gd', name: 'Gadolinio', number: 64 },
+            { symbol: 'Tb', name: 'Terbio', number: 65 },
+            { symbol: 'Dy', name: 'Disprosio', number: 66 },
+            { symbol: 'Ho', name: 'Holmio', number: 67 },
+            { symbol: 'Er', name: 'Erbio', number: 68 },
+            { symbol: 'Tm', name: 'Tulio', number: 69 },
+            { symbol: 'Yb', name: 'Iterbio', number: 70 },
+            { symbol: 'Lu', name: 'Lutecio', number: 71 },
+            { symbol: 'Hf', name: 'Hafnio', number: 72 },
+            { symbol: 'Ta', name: 'Tántalo', number: 73 },
+            { symbol: 'W', name: 'Wolframio', number: 74 },
+            { symbol: 'Re', name: 'Renio', number: 75 },
+            { symbol: 'Os', name: 'Osmio', number: 76 },
+            { symbol: 'Ir', name: 'Iridio', number: 77 },
+            { symbol: 'Pt', name: 'Platino', number: 78 },
+            { symbol: 'Au', name: 'Oro', number: 79 },
+            { symbol: 'Hg', name: 'Mercurio', number: 80 },
+            { symbol: 'Tl', name: 'Talio', number: 81 },
+            { symbol: 'Pb', name: 'Plomo', number: 82 },
+            { symbol: 'Bi', name: 'Bismuto', number: 83 },
+            { symbol: 'Po', name: 'Polonio', number: 84 },
+            { symbol: 'At', name: 'Astato', number: 85 },
+            { symbol: 'Rn', name: 'Radón', number: 86 },
+            { symbol: 'Fr', name: 'Francio', number: 87 },
+            { symbol: 'Ra', name: 'Radio', number: 88 },
+            { symbol: 'Ac', name: 'Actinio', number: 89 },
+            { symbol: 'Th', name: 'Torio', number: 90 },
+            { symbol: 'Pa', name: 'Protactinio', number: 91 },
+            { symbol: 'U', name: 'Uranio', number: 92 },
+            { symbol: 'Np', name: 'Neptunio', number: 93 },
+            { symbol: 'Pu', name: 'Plutonio', number: 94 },
+            { symbol: 'Am', name: 'Americio', number: 95 },
+            { symbol: 'Cm', name: 'Curio', number: 96 },
+            { symbol: 'Bk', name: 'Berkelio', number: 97 },
+            { symbol: 'Cf', name: 'Californio', number: 98 },
+            { symbol: 'Es', name: 'Einstenio', number: 99 },
+            { symbol: 'Fm', name: 'Fermio', number: 100 },
+            { symbol: 'Md', name: 'Mendelevio', number: 101 },
+            { symbol: 'No', name: 'Nobelio', number: 102 },
+            { symbol: 'Lr', name: 'Lawrencio', number: 103 },
+            { symbol: 'Rf', name: 'Rutherfordio', number: 104 },
+            { symbol: 'Db', name: 'Dubnio', number: 105 },
+            { symbol: 'Sg', name: 'Seaborgio', number: 106 },
+            { symbol: 'Bh', name: 'Bohrio', number: 107 },
+            { symbol: 'Hs', name: 'Hassio', number: 108 },
+            { symbol: 'Mt', name: 'Meitnerio', number: 109 },
+            { symbol: 'Ds', name: 'Darmstadtio', number: 110 },
+            { symbol: 'Rg', name: 'Roentgenio', number: 111 },
+            { symbol: 'Cn', name: 'Copernicio', number: 112 },
+            { symbol: 'Nh', name: 'Nihonio', number: 113 },
+            { symbol: 'Fl', name: 'Flerovio', number: 114 },
+            { symbol: 'Mc', name: 'Moscovio', number: 115 },
+            { symbol: 'Lv', name: 'Livermorio', number: 116 },
+            { symbol: 'Ts', name: 'Tenesino', number: 117 },
+            { symbol: 'Og', name: 'Oganesón', number: 118 }
+        ];
+
+        function getRandomElements(array, count) {
+            const shuffled = array.sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count);
         }
 
-        function checkTime() {
-            var now = new Date();
-            var hours = now.getHours();
-            if (hours >= 20 || hours < 5) {
-                document.getElementById('errorMessage').style.display = 'block';
-            }
+        function displayElements() {
+            const randomElements = getRandomElements(elements, 3);
+            const container = document.getElementById('elements');
+            container.innerHTML = randomElements.map(element => 
+                `<div class="element">${element.symbol} (${element.name}) - Número Atómico: ${element.number}</div>`
+            ).join('');
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            checkTime();
-        });
+        displayElements();
     </script>
 </body>
 </html>
